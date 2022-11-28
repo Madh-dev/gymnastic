@@ -68,3 +68,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+#### Fitness Exercise App
+###### There is two pages to switch on this app
+-Home
+-ExerciseDetail
+ ### Home Page
+ ###### under home page, the section under it are:
+ -HeroBanner
+ -SearchExercises
+  -Exercises
+    ##### HeroBanner section
+    *it contains some text and image banner*
+    ##### SearchExercises section
+    ###### create search input and button
+    ###### fetch data from rapid api after inputing value on search field
+    ###### under SearchExercises section, there is HorizontalScrollBar section
+    It contains
