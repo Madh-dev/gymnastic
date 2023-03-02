@@ -21,8 +21,8 @@ const Bodypart = ({ item, bodyPart, setBodyPart }) => {
                 borderTop: bodyPart === item ? '4px solid #ff2625' : '',
                 backgroundColor: '#fff',
                 borderBottomLeftRadius: '20px',
-                width: '270px',
-                height: '280px',
+                width: '200px',
+                height: '200px',
                 cursor: 'pointer',
                 gap: '47px'
             }}
@@ -38,7 +38,7 @@ const Bodypart = ({ item, bodyPart, setBodyPart }) => {
                 )
             })} */}
             <img src={Icon} alt="dumbbell" style={{ width: '40px', height: '40px' }} />
-          {item &&  <Typography fontSize='24px' fontWeight="bold" color="#3a1212" textTransform="capitalize">{item}</Typography>} 
+          {item &&  <Typography fontSize='24px' fontWeight="bold" color="#3a1212" textTransform="capitalize" align='center'>{item}</Typography>} 
         </Stack>
 
 

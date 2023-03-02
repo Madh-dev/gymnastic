@@ -25,8 +25,24 @@ const HorizontalScrollbar = ({ data, isBodyParts, setBodyPart, bodyPart }) => (
   <Swiper
     modules={[Navigation]}
     spaceBetween={50}
-    slidesPerView={3}
-    navigation>
+    slidesPerView={1}
+    navigation
+    breakpoints={{
+      // when window width is >= 640px
+      640: {
+        width: 640,
+        slidesPerView: 2,
+      },
+      // when window width is >= 768px
+      768: {
+        width: 768,
+        slidesPerView: 3,
+      },
+      992: {
+        width: 992,
+        slidesPerView: 4,
+      },
+    }}>
 
     {data?.map((item) => (
       <SwiperSlide>
