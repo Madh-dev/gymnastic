@@ -1,51 +1,49 @@
 
-import React, { useContext } from 'react';
-import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+import React from 'react';
 import { Box, Typography } from '@mui/material';
+
+// import Swiper core and required modules
+import { Navigation } from 'swiper';
+
+// import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 // import ExerciseCard from './ExerciseCard';
 import Bodypart from './Bodypart'
 import ExerciseCard from './ExerciseCard'
 
-import RightArrowIcon from '../assets/right-arrow.png';
-import LeftArrowIcon from '../assets/left-arrow.png';
 
-const LeftArrow = () => {
-  const { scrollPrev } = useContext(VisibilityContext);
 
-  return (
-    <Typography  onClick={() => scrollPrev()} className="right-arrow">
-      <img src={LeftArrowIcon} alt="left -arrow" />
-    </Typography>
-  );
-};
 
-const RightArrow = () => {
-  const { scrollNext } = useContext(VisibilityContext);
-
-  return (
-    <Typography  onClick={() => scrollNext()} className="left-arrow">
-      <img src={RightArrowIcon} alt="right-arrow" />
-    </Typography>
-  );
-};
 
 const HorizontalScrollbar = ({ data, isBodyParts, setBodyPart, bodyPart }) => (
-  <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+  <Swiper
+    modules={[Navigation]}
+    spaceBetween={50}
+    slidesPerView={3}
+    navigation>
     {data.map((item) => (
-      <Box
-        key={item.id || item}
-        itemId={item.id || item}
-        title={item.id || item}
-        m="0 40px"
-      >
-         {isBodyParts ?
-          <Bodypart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} /> :
-           <ExerciseCard exercise={item} /> 
-         }
-      </Box>
+      <SwiperSlide>
+        <Box
+          key={item.id || item}
+          itemId={item.id || item}
+          title={item.id || item}
+          m="0 40px"
+        >
+          {isBodyParts ?
+            <Bodypart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} /> :
+            <ExerciseCard exercise={item} />
+          }
+        </Box>
+      </SwiperSlide>
     ))}
-  </ScrollMenu>
+    
+  </Swiper>
 );
 
 export default HorizontalScrollbar;
