@@ -27,7 +27,8 @@ const HorizontalScrollbar = ({ data, isBodyParts, setBodyPart, bodyPart }) => (
     spaceBetween={50}
     slidesPerView={3}
     navigation>
-    {data.map((item) => (
+
+    {data?.map((item) => (
       <SwiperSlide>
         <Box
           key={item.id || item}
@@ -41,8 +42,9 @@ const HorizontalScrollbar = ({ data, isBodyParts, setBodyPart, bodyPart }) => (
           }
         </Box>
       </SwiperSlide>
-    ))}
-    
+        ))
+    }
+
   </Swiper>
 );
 
