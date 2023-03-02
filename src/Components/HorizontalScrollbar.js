@@ -1,11 +1,11 @@
 
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 
 // import Swiper core and required modules
 import { Navigation } from 'swiper';
 
-// import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 

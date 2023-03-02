@@ -1,8 +1,9 @@
 import React from 'react'
 import{Box, Stack, Typography} from '@mui/material'
+import Loader from './Loader'
 const ExerciseVideos = ({exerciseVideos, name}) => {
 
-if(!exerciseVideos.length) return 'Loading...';
+if(!exerciseVideos?.length) return <Loader />;
 
   return (
     <Box sx={{
@@ -31,13 +32,13 @@ if(!exerciseVideos.length) return 'Loading...';
           href={`https://www.youtube.com/watch?v=${item.video.videoId}`}
           target='_blank'
           rel='noreferrer'>
-            <img src={item.video.thumbnails[0].url} alt={item.video.title} />
+            <img src={item?.video?.thumbnails[0]?.url} alt={item.video.title} />
             <Box>
               <Typography variant='h5' color='#000'>
-                {item.video.title}
+                {item?.video?.title}
               </Typography>
               <Typography variant='h6' color='#000'>
-                {item.video.channeName}
+                {item?.video?.channeName}
               </Typography>
               </Box>
           </a>

@@ -27,9 +27,11 @@ const extraDetail = [
 
   return (
    <Stack gap="60px" sx={{flexDirection: {lg: 'row'}, p: '20px', alignItems: 'center' }} >
-    <img src={gifUrl} alt={name} loading= "lazy" className='detail-image' />
+   {gifUrl && <img src={gifUrl} alt={name} loading= "lazy" className='detail-image' />} 
 
     <Stack sx={{gap: {lg: '35px', xs: '20px'}}} >
+    {name && target && (
+      <>
     <Typography variant='h3'>
       {name}
       </Typography>
@@ -38,14 +40,15 @@ const extraDetail = [
       is one of the best exercises to target your {target}. 
       It will help you improve your mood and gain energy.
     </Typography>
-    {extraDetail.map((item,index)=> (
+    </>)}
+    {extraDetail?.map((item,index)=> (
       <Stack key={index} direction='row' gap='24px' alignItems='center'>
         <Button sx={{background: '#fff2db', borderRadius: '50%', width: '100px',
       height: '100px'}}>
-          <img src={item.icon}  alt={item.name} style={{width: '50px', height: '50px'}}  />
+          <img src={item?.icon}  alt={item?.name} style={{width: '50px', height: '50px'}}  />
         </Button>
         <Typography variant='h5' textTransform='capitalize'>
-          {item.name}
+          {item?.name}
         </Typography>
         </Stack>
     ))}

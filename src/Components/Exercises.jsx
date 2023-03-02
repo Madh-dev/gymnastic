@@ -43,17 +43,17 @@ const currentExercises = exercises.slice(indexOfTheFirstExercise, indexOfTheLast
       </Typography>
       <Stack direction='row' sx={{gap: {lg: '110px',xs:'50px'}}}
       flexWrap='wrap' justifyContent='center'>
-        {currentExercises.map((exercise,index)=>(
+        {currentExercises?.map((exercise,index)=>(
           <ExerciseCard key={index} exercise={exercise}/>
         ))}
       </Stack>
       <Stack mt='100px' alignItems='center'>
-        {exercises.length > 9 && (
+        {exercises?.length > 9 && (
           <Pagination
           color="standard" 
           shape="rounded"
           defaultPage={1}
-          count={Math.ceil(exercises.length / exercisesPerPage )}
+          count={Math.ceil(exercises?.length / exercisesPerPage )}
           page={currentPage}
           onChange={paginate}
           size="large"
